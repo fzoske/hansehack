@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>loadmapasyncHTML</title>
+        <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ao3eNYIGJwOXJTGo1ZTN3gj0tvo-Uml0dykcHwPhJhEWWRJ-sq0X3bdawiqaG-9P'></script>
+        <script type='text/javascript'>
+                var map;
+                function loadMapScenario() {
+                    map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+                    var holstentor = {'latitude': 53.849960, 'longitude': 10.672488};
+                    var peter = {'latitude': 53.8663, 'longitude': 10.6796};
+                    var peter2 = {'latitude': 53.848247, 'longitude': 10.688049};
+                    var pp = new Microsoft.Maps.Pushpin(holstentor, {color: 'red'});
+                    var pushpin2 = new Microsoft.Maps.Pushpin(peter, {color: 'blue'}); 
+                    var pushpin3 = new Microsoft.Maps.Pushpin(peter2, {color: 'yellow'}); 
+                    map.entities.push(pp);
+                    map.entities.push(pushpin2);
+                    map.entities.push(pushpin3);
+                }
+                
+            
+        </script>
+    </head>
+    <body onload='loadMapScenario();'>
+        <div id='printoutPanel'></div>
+        
+        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+    </body>
+</html>
